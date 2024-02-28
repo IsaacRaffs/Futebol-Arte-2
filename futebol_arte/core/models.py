@@ -61,6 +61,8 @@ class Jogador(models.Model):
     foto = models.FileField()
     genero = models.CharField(choices=GENERO_CHOICES, max_length=30)
     
+    classs Meta:
+        verbose_name_plural = 'Jogadores'
     
     def __str__(self):
         return self.nome
@@ -70,3 +72,9 @@ class Titulos(models.Model):
     ano_conquista = models.IntegerField(blank=False, null=False)
     colocacao = models.CharField(max_length=10, blank=False, null=False)
     time = models.ForeignKey(Time, on_delete=models.CASCADE, related_name='Times')
+    
+    classs Meta:
+        verbose_name_plural = 'Jogadores'
+    
+    def __str__(self):
+        return self.nome
